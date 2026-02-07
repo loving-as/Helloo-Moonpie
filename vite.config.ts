@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: '/Helloo-Moonpie/', // Updated for GitHub Pages deployment
+  base: '/', // Root path for Vercel deployment
   server: {
     host: "::",
     port: 8080,
