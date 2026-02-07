@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 40% 96%;
+    --foreground: 0 60% 15%;
+
+    --card: 0 45% 98%;
+    --card-foreground: 0 60% 15%;
+
+    --popover: 0 40% 97%;
+    --popover-foreground: 0 60% 15%;
+
+    --primary: 0 75% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 15 80% 92%;
+    --secondary-foreground: 0 60% 20%;
+
+    --muted: 0 30% 90%;
+    --muted-foreground: 0 20% 45%;
+
+    --accent: 355 80% 58%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 0 30% 85%;
+    --input: 0 30% 88%;
+    --ring: 0 75% 50%;
+
+    --radius: 1rem;
+
+    --rose-gold: 15 60% 65%;
+    --love-red: 0 75% 50%;
+    --deep-rose: 345 70% 55%;
+    --burgundy: 0 50% 88%;
+    --warm-glow: 15 100% 70%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Quicksand', sans-serif;
+    background-image: 
+      radial-gradient(circle at 20% 50%, rgba(255, 182, 193, 0.3) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(255, 105, 135, 0.25) 0%, transparent 50%),
+      radial-gradient(circle at 40% 20%, rgba(220, 20, 60, 0.15) 0%, transparent 40%);
+    background-attachment: fixed;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ff0044' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 0;
+  }
+}
+
+@layer utilities {
+  .font-romantic {
+    font-family: 'Dancing Script', cursive;
+  }
+  
+  .rose-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='10' y='50' font-size='40' opacity='0.15' fill='%23dc143c'%3E🌹%3C/text%3E%3Ctext x='60' y='80' font-size='30' opacity='0.1' fill='%23ff1744'%3E💕%3C/text%3E%3C/svg%3E");
+    background-size: 200px 200px;
+  }
+  
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.3) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    animation: shimmer 3s infinite;
+  }
+  
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  
+  @keyframes petalFall {
+    0% {
+      transform: translateY(-50px) rotate(0deg);
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.8;
+    }
+    75% {
+      opacity: 0.5;
+    }
+    100% {
+      transform: translateY(500px) rotate(360deg);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes unwrapReveal {
+    0% {
+      transform: scale(0.3) translateY(-20px);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.1) translateY(0);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .animate-petal-fall {
+    animation: petalFall linear forwards;
+  }
+  
+  .animate-unwrap-reveal {
+    animation: unwrapReveal 0.8s ease-out forwards;
+  }
+}
