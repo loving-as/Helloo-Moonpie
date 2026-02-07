@@ -3,7 +3,8 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main   # deploy on every push to main
+      - main
+  workflow_dispatch:   # deploy on every push to main
 
 permissions:
   contents: read
